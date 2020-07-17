@@ -167,13 +167,13 @@ Example:
 
 
 					Partials
-<%- include (“partialFileName”) %>
+<%- include ("partialFileName") %>
 
 * Partials are bits of repeatable code such a the header of an html boil plate or the footer
 
 * Store partials in their own directory under views/partials
 
-* Insert partials into other .ejs files by calling them inside a <%- include (“partials/nameOfPartialFileName”) %> bracket with include before the file name. When linking the partial you need to explicitly direct the file partials/file name.
+* Insert partials into other .ejs files by calling them inside a <%- include ("partials/nameOfPartialFileName") %> bracket with include before the file name. When linking the partial you need to explicitly direct the file partials/file name.
 
 
 				POST Requests
