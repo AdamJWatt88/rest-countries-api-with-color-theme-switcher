@@ -1,29 +1,30 @@
 <%- include ("partials/header.ejs") %>
 
+<header>
+  <h1>Where in the world?</h1>
+  <img src="images/moon.svg" alt="" />
+  <button id="dark-mode-btn" class="dark-mode-btn">Dark Mode</button>
+</header>
 
-   <header>
-       <h1>Where in the world?</h1>
-       <img src="images/moon.svg" alt="">
-       <button id="dark-mode-btn" class="dark-mode-btn">Dark Mode</button>
-   </header>
+<div class="container">
+  <input type="text" id="search" placeholder="Search for a country..." />
+  <select name="region" id="select-region">
+    <option value="" disabled selected>Filter By Region</option>
+    <option value="Africa">Africa</option>
+    <option value="Asia">Asia</option>
+  </select>
+</div>
 
-   <div class="container">
-       <input type="text" id="search" placeholder="Search for a country...">
-       <select name="region" id="select-region">
-           <option value="Africa">Africa</option>
-           <option value="Asia">Asia</option>
-       </select>
-   </div>
-
-   <div id="country-container" class="country-container">
-       <div id="card" class="card">
-           <img src="" alt="">
-           <h3 id="country">Germany</h3>
-            <span id="population">Population: 10000</span>
-            <span id="region">Region: Europe</span>
-            <span id="capitol">Capitol: Capitol</span>
-       </div>
-   </div>
-
+<div class="container">
+  <div id="country-container" class="country-container">
+    <div id="card" class="card">
+      <img src="../images/Germany.png" alt="" />
+      <h3 id="country">Germany</h3>
+      <span id="population">Population: 10000</span>
+      <span id="region">Region: Europe</span>
+      <span id="capitol">Capitol: Capitol</span>
+    </div>
+  </div>
+</div>
 
 <%- include ("partials/footer.ejs") %>
