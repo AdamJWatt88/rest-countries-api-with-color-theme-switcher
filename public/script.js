@@ -8,15 +8,34 @@ async function test() {
 
     const data = await response.json();
     return data;
-    
+
 }
 
-function addToDOM() {  
-    fetch("https://restcountries.eu/rest/v2/all")
-    .then((data) => data.json())
-    .then((data) => {
-        data.forEach( (data) => {
-            cards.push(`
+// function addToDOM() {
+//     fetch("https://restcountries.eu/rest/v2/all")
+//         .then((data) => data.json())
+//         .then((data) => {
+//             data.forEach((data) => {
+//                 cards.push(`
+//   <div class="card">
+//     <img src="${data.flag}" alt="${data.name}"/>
+//     <h3>${data.name}</h3>
+//     <span>Population: ${data.population}</span>
+//     <span>Region: ${data.region}</span>
+//     <span>Capital: ${data.capital}</span>
+//   </div> 
+//   `);
+//             });
+
+//             countryContainer.innerHTML = cards.join(" ");
+//         });
+// }
+
+async function addToDOM() {
+    const response = await fetch("https://restcountries.eu/rest/v2/all")
+    const data = await response.json()
+    data.forEach((data) => {
+                cards.push(`
   <div class="card">
     <img src="${data.flag}" alt="${data.name}"/>
     <h3>${data.name}</h3>
@@ -25,25 +44,27 @@ function addToDOM() {
     <span>Capital: ${data.capital}</span>
   </div> 
   `);
-        });
+            });
 
-        countryContainer.innerHTML = cards.join(" ");
-    });
+            countryContainer.innerHTML = cards.join(" ");
+        
 }
+
 
 addToDOM()
 
-    // this works to remove the unwanted cards by region but needs to reload all countries back into the DOM
-    //might need to make addToDOM async so that it may be called every time it changes
-    // adding addToDOM to this event as it is does not work to refresh the DOM
-selectRegion.addEventListener('change', () => {
+// this works to remove the unwanted cards by region but needs to reload all countries back into the DOM
+//might need to make addToDOM async so that it may be called every time it changes
+// adding addToDOM to this event as it is does not work to refresh the DOM
+// selectRegion.addEventListener('change', () => {
+    
+//     document.querySelectorAll('.card').forEach(card => {
+//         if (!card.innerHTML.includes(`Region: ${selectRegion.value}`)) {
+//             countryContainer.removeChild(card);
+//         }
 
-    document.querySelectorAll('.card').forEach( card => {
-        if (!card.innerHTML.includes(`Region: ${selectRegion.value}`)  ) {
-            countryContainer.removeChild(card);
-          }
-
-})
+//     })
+// })
 
 
 window.addEventListener('click', (e) => {

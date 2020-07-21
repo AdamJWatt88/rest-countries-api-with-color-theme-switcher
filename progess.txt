@@ -1,0 +1,4 @@
+messed with form tag on input in index.ejs needs to be addressed
+
+rewrite script.js into app.js
+

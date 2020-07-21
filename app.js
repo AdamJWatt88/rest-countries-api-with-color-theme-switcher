@@ -1,14 +1,21 @@
 const express = require('express');
 const app = express();
+app.set("view engine", "ejs")
+app.use(express.static("public"))
+
+
 
 
 app.get("/", function (req, res) {
     res.render("index.ejs")
 });
 
-app.use(express.static("public"))
+app.post("/region-selector", function (req, res) {
+        // let region = req.body.region
 
-app.set("view engine", "ejs")
+        res.render('region.ejs')
+    }
+)
 
 
 app.listen(3000, () => {
