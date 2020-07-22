@@ -7,11 +7,17 @@
 </header>
 
 <div class="container search-container">
-  <form action="/region-selector" id="region-form" method="POST">
-  <input type="text" name="region-form" id="search" placeholder="Search for a country..." />
-</form>
 
-  <select name="select-region"  id="select-region">
+    <input
+      type="text"
+      name="region-form"
+      id="search"
+      placeholder="Search for a country..."
+    />
+  
+
+  <form action="/region-selector" id="selectRegion" method="GET">
+  <select name="selectRegion" id="region-form">
     <option value="" disabled selected>Filter By Region</option>
     <option value="Africa">Africa</option>
     <option value="Americas">Americas</option>
@@ -20,12 +26,20 @@
     <option value="Oceania">Oceania</option>
     <option value="Polar">Polar</option>
   </select>
-
+</form>
 </div>
-
 
 <div class="container">
   <div id="country-container" class="country-container">
+    <% data.forEach( country => { %>
+    <div class="card">
+      <img src=<%=country["flag"] %> alt=<%= country["name"]%> />
+      <h3><%= country["name"]%></h3>
+      <span>Population: <%= country["population"]%></span>
+      <span>Region: <%= country["region"]%></span>
+      <span>Capital: <%= country["capital"]%></span>
+    </div>
+    <% }) %>
   </div>
 </div>
 
