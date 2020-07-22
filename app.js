@@ -34,14 +34,14 @@ app.get("/", (req, res) => {
     } )
 });
 
-app.get("/region-selector", (req, res) => {
+app.get("/regionSelector", (req, res) => {
     let query = req.body.selectRegion;
     let url = `https://restcountries.eu/rest/v2/region/${query}`
     console.log(query)
     request(url, (error,response, body) => {
         if(!error && response.statusCode == 200) {
             let data = JSON.parse(body)
-            res.render('index.ejs', { data: data} )
+            res.render('index.ejs', { countries: data} )
         } 
     } )
 })
