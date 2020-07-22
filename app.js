@@ -29,7 +29,7 @@ app.get("/", (req, res) => {
     request(url, (error,response, body) => {
         if(!error && response.statusCode == 200) {
             let data = JSON.parse(body)
-            res.render('index.ejs', { data: data} )
+            res.render('index.ejs', { countries: data} )
         } 
     } )
 });
@@ -44,7 +44,6 @@ app.get("/region-selector", (req, res) => {
             res.render('index.ejs', { data: data} )
         } 
     } )
-
 })
 
 app.post("/region-selector", function (req, res) {
