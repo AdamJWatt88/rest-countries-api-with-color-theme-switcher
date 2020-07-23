@@ -8,16 +8,19 @@
 
 <div class="container search-container">
 
+  
     <input
-      type="text"
+     type="text"
+      type="submit"
       name="region-form"
       id="search"
       placeholder="Search for a country..."
     />
-  
+ 
 
-  <form action="/regionSelector" id="selectRegion" method="GET">
-  <select name="selectRegion" id="region-form">
+
+<form action="/regionSelector" id="selectRegion" method="GET">
+  <select name="selectRegion" id="select-region" form="selectRegion" onchange="this.form.submit()">
     <option value="" disabled selected>Filter By Region</option>
     <option value="Africa">Africa</option>
     <option value="Americas">Americas</option>
@@ -27,6 +30,7 @@
     <option value="Polar">Polar</option>
   </select>
 </form>
+
 </div>
 
 <div class="container">
