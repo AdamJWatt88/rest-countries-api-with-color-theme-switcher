@@ -1,24 +1,15 @@
 <%- include ("partials/header.ejs") %>
 
-<header>
-  <h1>Where in the world?</h1>
-  <img src="images/moon.svg" alt="" />
-  <button id="dark-mode-btn" class="dark-mode-btn">Dark Mode</button>
-</header>
-
 <div class="container search-container">
 
-  
     <input
-     type="text"
+      type="text"
       type="submit"
       name="region-form"
       id="search"
       placeholder="Search for a country..."
     />
  
-
-
 <form action="/regionSelector" id="selectRegion" method="GET">
   <select name="selectRegion" id="select-region" form="selectRegion" onchange="this.form.submit()">
     <option value="" disabled selected>Filter By Region</option>
@@ -35,8 +26,9 @@
 
 <div class="container">
   <div id="country-container" class="country-container">
+    <form action="/region" method="GET">
     <% countries.forEach( country => { %>
-    <div class="card">
+    <div class="card" id="test" onclick="this.parentNode.submit()">
       <img src=<%=country["flag"] %> alt=<%= country["name"]%> />
       <h3><%= country["name"]%></h3>
       <span>Population: <%= country["population"]%></span>
@@ -44,6 +36,7 @@
       <span>Capital: <%= country["capital"]%></span>
     </div>
     <% }) %>
+   </form>
   </div>
 </div>
 
