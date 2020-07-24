@@ -26,17 +26,20 @@
 
 <div class="container">
   <div id="country-container" class="country-container">
-    <form action="/region" method="GET">
+   
     <% countries.forEach( country => { %>
-    <div class="card" id="test" onclick="this.parentNode.submit()">
+      <form action="/region" method="GET" id=<%= country["name"]%> >
+    <div class="card" onclick="this.parentNode.submit()">
+      <input value=<%= country["name"]%> type="hidden" form=<%= country["name"] %> name=<%= country["name"] %>/>
       <img src=<%=country["flag"] %> alt=<%= country["name"]%> />
       <h3><%= country["name"]%></h3>
       <span>Population: <%= country["population"]%></span>
       <span>Region: <%= country["region"]%></span>
       <span>Capital: <%= country["capital"]%></span>
     </div>
+  </form>
     <% }) %>
-   </form>
+  
   </div>
 </div>
 

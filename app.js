@@ -39,6 +39,7 @@ app.get("/regionSelector", (req, res) => {
     let query = req.query.selectRegion;
     let url = `https://restcountries.eu/rest/v2/region/${query}`
 
+    console.log(query)
     request(url, (error,response, body) => {
         if(!error && response.statusCode == 200) {
             let data = JSON.parse(body)
@@ -47,10 +48,18 @@ app.get("/regionSelector", (req, res) => {
     } )
 })
 
+
+// loop through all the names of the countries and store them into an array then attach the value to the end of req.query
 app.get("/region", (req,res) => {
-    let query = req.query.test
+    let query = req.query.Antigua
+    let url = `https://restcountries.eu/rest/v2/name/${query}?fullText=true`;
     console.log(query)
-    res.render('region.ejs')
+    request(url, (error,response, body) => {
+        if(!error && response.statusCode == 200) {
+            let data = JSON.parse(body)
+            res.render('region.ejs', { countries: data} )
+        } 
+    } )
 })
 
 
