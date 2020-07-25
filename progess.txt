@@ -1,4 +1,13 @@
-messed with form tag on input in index.ejs needs to be addressed
+messed with form tag on input in index.ejs needs to be addressed [X]
 
-rewrite script.js into app.js
+rewrite script.js into app.js [X]
 
+convert onclick submits that are hardwired into the html and rewrite them into the script.js []
+
+fix population to show numbers serparated by commas []
+
+make .back-btn a submit button to go back to the index.ejs []
+
+need to create a loop for bordering countries to generate all spans and countries [X]
+
+need to create a loop for ALL laguages to generate all spans and languages [X]

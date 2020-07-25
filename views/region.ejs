@@ -1,32 +1,37 @@
 <%- include ("partials/header.ejs") %>
 
 <div class="container">
-<button id="back" class="back">Back</button>
+<button id="back" class="back-btn">Back</button>
 
 <div class="detail-container">
-    <% countries.forEach( country => { %>
+    
     <div class="detail-image">
         <img src=<%=country["flag"] %> alt=<%= country["nativeName"]%>>
     </div>
     <div class="details">
-        <h2>Belgium</h2>
+        <h2><%= country["name"]%></h2>
         <div class="details-info">
             <span>Native Name: <%= country["nativeName"]%></span>
             <span>Population: <%= country["population"]%></span>
             <span>Region: <%= country["region"]%></span>
             <span>Sub Region: <%= country["subregion"]%></span>
-            <span>Capitol: <%= country["capitol"]%></span>
+            <span>Capital: <%= country["capital"]%></span>
         </div>
         <div class="details-info">
             <span>Top Level Domain: <%= country["topLevelDomain"]%></span>
-            <span>Currencies: <%= country["currencies"]["name"]%></span>
-            <span>Language: <%= country["languages"]["name"]%></span>
+            <span>Currencies: <%= country["currencies"]["0"]["name"]%></span>
+            <span>Languages:  <% country["languages"].forEach( (language) => { %>
+                <span><%= language["name"] %></span>
+            <% }) %>
         </div>
         <div class="border-countries">
-            <span>Border Countries</span><span>France</span><span>Germany</span><span>Netherlands</span>
+            <span>Border Countries:</span>
+            <% country["borders"].forEach( (border) => { %>
+                <span><%= border %></span>
+            <% }) %>
         </div>
     </div>
-    <% }) %>
+ 
 </div>
 </div>
 

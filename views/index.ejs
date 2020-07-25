@@ -27,10 +27,10 @@
 <div class="container">
   <div id="country-container" class="country-container">
    
-    <% countries.forEach( country => { %>
-      <form action="/region" method="GET" id=<%= country["name"]%> >
-    <div class="card" onclick="this.parentNode.submit()">
-      <input value=<%= country["name"]%> type="hidden" form=<%= country["name"] %> name=<%= country["name"] %>/>
+    <% countries.forEach( (country) => { %>
+      <form action="/region" method="GET" id="alphaCodes" >
+    <div class="card" id="alphaCodes" onclick="this.parentNode.submit()">
+      <input value=<%= country["alpha3Code"]%> type="hidden" name="alphaCodes" >
       <img src=<%=country["flag"] %> alt=<%= country["name"]%> />
       <h3><%= country["name"]%></h3>
       <span>Population: <%= country["population"]%></span>
