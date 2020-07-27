@@ -11,23 +11,26 @@
     <div class="details">
         <h2><%= country["name"]%></h2>
         <div class="details-info">
-            <span>Native Name: <%= country["nativeName"]%></span>
-            <span>Population: <%= country["population"]%></span>
-            <span>Region: <%= country["region"]%></span>
-            <span>Sub Region: <%= country["subregion"]%></span>
-            <span>Capital: <%= country["capital"]%></span>
+            <span class="detail"><h4>Native Name:</h4> <p><%= country["nativeName"]%></p></span>
+            <span class="detail"><h4>Population:</h4> <%= country["population"]%></span>
+            <span class="detail"><h4>Region:</h4> <%= country["region"]%></span>
+            <span class="detail"><h4>Sub Region:</h4> <%= country["subregion"]%></span>
+            <span class="detail"><h4>Capital:</h4> <%= country["capital"]%></span>
         </div>
         <div class="details-info">
-            <span>Top Level Domain: <%= country["topLevelDomain"]%></span>
-            <span>Currencies: <%= country["currencies"]["0"]["name"]%></span>
-            <span>Languages:  <% country["languages"].forEach( (language) => { %>
-                <span><%= language["name"] %></span>
+            <span class="detail"><h4>Top Level Domain:</h4> <%= country["topLevelDomain"]%></span>
+            <span class="detail"><h4>Currencies:</h4> <%= country["currencies"]["0"]["name"]%></span>
+            <span class="detail"><h4>Languages:</h4>  
+                <% let languageList = [] %>
+                <% country["languages"].forEach( (language) => { %>
+                <% languageList.push(language["name"]) %>
             <% }) %>
+            <span><%= languageList.join(", ")%></span>
         </div>
+        <h4>Border Countries:</h4>
         <div class="border-countries">
-            <span>Border Countries:</span>
             <% country["borders"].forEach( (border) => { %>
-                <span><%= border %></span>
+                <span class="border-country"><%= border %></span>
             <% }) %>
         </div>
     </div>
