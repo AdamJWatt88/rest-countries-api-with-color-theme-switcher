@@ -6,8 +6,22 @@ convert onclick submits that are hardwired into the html and rewrite them into t
 
 fix population to show numbers serparated by commas []
 
-make .back-btn a submit button to go back to the index.ejs []
+make .back-btn a submit button to go back to the index.ejs [X]
 
 need to create a loop for bordering countries to generate all spans and countries [X]
 
 need to create a loop for ALL laguages to generate all spans and languages [X]
+
+fix styles on medium and large screens. it is close enough but looks off []
+
+fix flag sizes on all size screens. the flags do not fill the container and stretch oddly []
+
+fix maginfying glass for other browsers []
+
+fix maginfying glass. needs to stay hidden when not focused []
+
+make dark mode work []
+
+add back arrow onto back button []
+
+fix search bar on large screens []

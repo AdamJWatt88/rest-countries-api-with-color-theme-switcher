@@ -1,41 +1,68 @@
 <%- include ("partials/header.ejs") %>
 
 <div class="container">
-<button id="back" class="back-btn">Back</button>
-
-<div class="detail-container">
     
-    <div class="detail-image">
+    <form action="/back" id="back" method="GET">
+    <button id="back" type="submit" class="back-btn">Back</button>
+    </form>
+
+    <div class="detail-container">
+        
         <img src=<%=country["flag"] %> alt=<%= country["nativeName"]%>>
+        
+        <div class="details-col">
+            <h2><%= country["name"]%></h2>
+            <div class="details">
+                <div class="details-info">
+                    <span class="detail">
+                        <h4>Native Name:</h4>
+                        <p><%= country["nativeName"]%></p>
+                    </span>
+                    <span class="detail">
+                        <h4>Population:</h4>
+                        <p><%= country["population"]%></p>
+                    </span>
+                    <span class="detail">
+                        <h4>Region:</h4>
+                        <p><%= country["region"]%></p>
+                    </span>
+                    <span class="detail">
+                        <h4>Sub Region:</h4>
+                        <p><%= country["subregion"]%></p>
+                    </span>
+                    <span class="detail">
+                        <h4>Capital:</h4>
+                        <p><%= country["capital"]%></p>
+                    </span>
+                </div>
+                <div class="details-info">
+                    <span class="detail">
+                        <h4>Top Level Domain:</h4>
+                        <p><%= country["topLevelDomain"]%></p>
+                    </span>
+                    <span class="detail">
+                        <h4>Currencies:</h4>
+                        <p><%= country["currencies"]["0"]["name"]%></p>
+                    </span>
+                    <span class="detail">
+                        <h4>Languages:</h4>
+                        <% let languageList = [] %>
+                        <% country["languages"].forEach( (language) => { %>
+                        <% languageList.push(language["name"]) %>
+                        <% }) %>
+                        <span><%= languageList.join(", ")%></span>
+                </div>
+            </div>
+            <div class="borders">
+                <h4>Border Countries:</h4>
+                <div class="border-countries">
+                    <% country["borders"].forEach( (border) => { %>
+                    <span class="border-country"><%= border %></span>
+                    <% }) %>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="details">
-        <h2><%= country["name"]%></h2>
-        <div class="details-info">
-            <span class="detail"><h4>Native Name:</h4> <p><%= country["nativeName"]%></p></span>
-            <span class="detail"><h4>Population:</h4> <%= country["population"]%></span>
-            <span class="detail"><h4>Region:</h4> <%= country["region"]%></span>
-            <span class="detail"><h4>Sub Region:</h4> <%= country["subregion"]%></span>
-            <span class="detail"><h4>Capital:</h4> <%= country["capital"]%></span>
-        </div>
-        <div class="details-info">
-            <span class="detail"><h4>Top Level Domain:</h4> <%= country["topLevelDomain"]%></span>
-            <span class="detail"><h4>Currencies:</h4> <%= country["currencies"]["0"]["name"]%></span>
-            <span class="detail"><h4>Languages:</h4>  
-                <% let languageList = [] %>
-                <% country["languages"].forEach( (language) => { %>
-                <% languageList.push(language["name"]) %>
-            <% }) %>
-            <span><%= languageList.join(", ")%></span>
-        </div>
-        <h4>Border Countries:</h4>
-        <div class="border-countries">
-            <% country["borders"].forEach( (border) => { %>
-                <span class="border-country"><%= border %></span>
-            <% }) %>
-        </div>
-    </div>
- 
-</div>
 </div>
 
 <%- include ("partials/footer.ejs") %>
