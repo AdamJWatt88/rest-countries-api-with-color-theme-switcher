@@ -10,6 +10,25 @@ body {
     margin: 0;
 }
 
+body.dark {
+    color: #fff;
+    background-color: #202D36;
+}
+
+body.dark header,
+body.dark .dark-mode-btn,
+body.dark input,
+body.dark input:focus,
+body.dark input::placeholder,
+body.dark select,
+body.dark .card,
+body.dark button,
+body.dark .border-country,
+body.dark .search-container img{
+    color: #fff;
+    background-color: #2B3743;
+}
+
 header,
 .container,
 .country-container {
@@ -70,23 +89,24 @@ header img {
     background-color: #fff;
 }
 
-.container input {
-    background-image: url(images/magnifying-glass.svg);
-    background-repeat: no-repeat;
-    background-position: 5% 50%;
-    background-size: 20px 20px;
-    border-radius: 10px;
+.search-container input {
+    position: relative;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px ;
+    margin-left: 50px;
     outline: none;
     border: none;
 }
 
-.container input::placeholder {
-   padding-left: 10%;
-}
-
-.container input:focus {
-    background-image: none;
+.search-container img {
+    position: absolute;
     background-color: #fff;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px ;
+    padding: 15px;
+    z-index: 10;
+    height: 50px;
+    width: 50px;
 }
 
 select {
@@ -152,8 +172,9 @@ select {
         max-height: max-content;
     }
 
-    .container input {
-        width: 100%;
+  
+    .search-container input {
+        width: 90%;
         height: 50px;
         margin-bottom: 20px;
     }
@@ -221,8 +242,8 @@ select {
         max-height: max-content;
     }
 
-    .container input {
-        width: 100%;
+    .search-container input {
+        width: 90%;
         height: 50px;
         margin-bottom: 20px;
     }
@@ -301,6 +322,8 @@ select {
 @media (min-width: 769px) {
 
     .search-container {
+        border: 1px solid black;
+        width: 100%;
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -308,7 +331,7 @@ select {
     }
 
     .search-container input {
-        width: 50%;
+        min-width: 500px;
         height: 50px;
     }
 
