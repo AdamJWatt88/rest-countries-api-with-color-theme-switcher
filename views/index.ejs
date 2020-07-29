@@ -24,7 +24,8 @@
     <% countries.forEach( (country) => { %>
     <form action="/region" method="GET" id="alphaCodes">
       <div class="card" id="alphaCodes" onclick="this.parentNode.submit()">
-        <input value=<%= country["alpha3Code"]%> type="hidden" name="alphaCodes"> <img src=<%=country["flag"] %>
+        <input value=<%= country["alpha3Code"]%> type="hidden" name="alphaCodes"> 
+        <img src=<%= country["flag"] %>
           alt=<%= country["name"]%> />
         <h3><%= country["name"]%></h3>
         <span>Population: <%= country["population"]%></span>
