@@ -25,8 +25,10 @@
     <form action="/region" method="GET" id="alphaCodes">
       <div class="card" id="alphaCodes" onclick="this.parentNode.submit()">
         <input value=<%= country["alpha3Code"]%> type="hidden" name="alphaCodes"> 
+        <div class="image-container">
         <img src=<%= country["flag"] %>
           alt=<%= country["name"]%> />
+        </div>
         <h3><%= country["name"]%></h3>
         <span>Population: <%= country["population"]%></span>
         <span>Region: <%= country["region"]%></span>
