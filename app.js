@@ -29,8 +29,6 @@ app.get("/back", (req, res) => {
     });
 });
 
-
-
 app.get("/search", (req, res) => {
     let query = req.query.search;
     let url = `https://restcountries.eu/rest/v2/name/${query}`

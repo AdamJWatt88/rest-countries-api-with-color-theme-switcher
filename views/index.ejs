@@ -1,8 +1,14 @@
 <%- include ("partials/header.ejs") %>
 
+<% function thousands_separators(num) { %>
+  <% const num_parts = num.toString().split("."); %>
+  <% num_parts[0] = num_parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ","); %>
+  <% return num_parts.join("."); %>
+<% } %>
+
 <div class="container search-container">
 <form action="/search" id="search" method="GET">
-  <img src="images/magnifying-glass.svg" alt="">
+  <img src="images/magnifying-glass.svg" alt="magnifying-glass.svg">
   <input type="text" type="submit" name="search" id="search" placeholder="Search for a country..." />
 </form>
 
@@ -25,10 +31,12 @@
     <form action="/region" method="GET" id="alphaCodes">
       <div class="card" id="alphaCodes" onclick="this.parentNode.submit()">
         <input value=<%= country["alpha3Code"]%> type="hidden" name="alphaCodes"> 
+        <div class="image-container">
         <img src=<%= country["flag"] %>
           alt=<%= country["name"]%> />
+        </div>
         <h3><%= country["name"]%></h3>
-        <span>Population: <%= country["population"]%></span>
+        <span>Population: <%= thousands_separators(country["population"]) %></span>
         <span>Region: <%= country["region"]%></span>
         <span>Capital: <%= country["capital"]%></span>
       </div>

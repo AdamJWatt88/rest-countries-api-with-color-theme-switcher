@@ -14,18 +14,20 @@ fix maginfying glass. needs to stay hidden when not focused [X]
 
 make dark mode work [X]
 
+make dark mode persist through page loads [X] 
+
+add padding for info on cards [X]
+
+fix population to show numbers serparated by commas [X]
 --------------------------------------------------------------------------------
 
 (optional) convert onclick submits that are hardwired into the html and rewrite them into the script.js []
-
-fix population to show numbers serparated by commas []
 
 fix styles on medium and large screens. it is close enough but looks off []
 
 fix flag sizes on all size screens. the flags do not fill the container and stretch oddly []
 
-make dark mode persist through page loads [] 
-
-add back arrow onto back button []
+fix back arrow onto back button []
 
 fix search bar on large screens []
+
