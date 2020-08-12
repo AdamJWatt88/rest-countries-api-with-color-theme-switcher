@@ -125,7 +125,7 @@ select {
 .country-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px,1fr) );
-    grid-template-rows: repeat(auto-fill, 400px);
+    grid-template-rows: auto;
     gap: 20px;
     padding: 0px;
     width: 100%;
@@ -152,22 +152,9 @@ select {
     width: 100%;
 }
 
-.image-container {
-    background-size: cover;
-    width: 100%;
-  height: 200px;
-}
-
-.card img {
-    object-fit: fill;
-    width: 100%;
-    height: 100%;
-}
-
 .detail h4 {
     margin-right: 5px;
 }
-
 
 .border-countries {
     display: grid;
