@@ -1,6 +1,5 @@
 <%- include ("partials/header.ejs") %>
 
-
 <% function thousands_separators(num) { %>
     <% const num_parts = num.toString().split("."); %>
     <% num_parts[0] = num_parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ","); %>
@@ -9,7 +8,7 @@
 
 <div class="container">
     
-    <form action="/back" id="back" method="GET">
+    <form action="/back" id="back" class="back-form" method="GET">
         <img src="images/back.svg" alt="back.svg">
         <button id="back" type="submit" class="back-btn">Back</button>
     </form>
