@@ -1,0 +1,25 @@
+{
+    "routes": [
+        {
+            "src": "/",
+            "methods": ["GET", "POST"],
+            "dest": "/api/index.js"
+        },
+        {
+            "src": "/regionSelector",
+            "dest": "/api/index.js"
+        },
+        {
+            "src": "/back",
+            "dest": "/api/index.js"
+        },
+        {
+            "src": "/search",
+            "dest": "/api/index.js"
+        },
+        {
+            "src": "/region",
+            "dest": "/api/index.js"
+        }
+    ]
+}
